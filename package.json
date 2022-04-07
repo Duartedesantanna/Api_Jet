@@ -1,0 +1,29 @@
+{
+  "name": "Api_Jet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Duartedesantanna/Api_Jet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Duartedesantanna/Api_Jet/issues"
+  },
+  "homepage": "https://github.com/Duartedesantanna/Api_Jet#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "knex": "^1.0.5",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "yup": "^0.32.11",
+    "yup-locales": "^1.2.3"
+  }
+}
