@@ -8,6 +8,6 @@ CREATE TABLE Produtos(
   imagem text NOT NULL,
   descricao varchar(2000) NOT NULL,
   estoque int NOT NULL,
-  statys boolean NOT NULL,
-  preço decimal NOT NULL
+  status boolean NOT NULL,
+  preco decimal NOT NULL
 );
