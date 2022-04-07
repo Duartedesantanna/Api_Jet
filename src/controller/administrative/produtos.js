@@ -66,6 +66,19 @@ const editarProduto = async (req, res) => {
 };
 
 const excluirProduto = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const produtoExcluir = await knex('produtos').where('id', id).del();
+    if (!produtoExcluir) {
+      return res.status(400).json({ mensagem: 'Não foi possivel excluir o produto.' });
+    }
+
+    return res.status(200).json({ mensagem: 'Exclusão concluída com sucesso.' })
+
+  } catch (error) {
+    return res.status(400).json({ mensagem: error.message });
+  }
 };
 
 
