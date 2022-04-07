@@ -1,5 +1,12 @@
 const knex = require('../database/conexao');
 
-module.exports = {
+const listarProdutos = async (req, res) => {
+};
 
+const abrirProduto = async (req, res) => {
+};
+
+
+module.exports = {
+    listarProdutos, abrirProduto
   }
