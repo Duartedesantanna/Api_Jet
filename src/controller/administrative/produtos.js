@@ -1,5 +1,6 @@
 const knex = require('../../database/conexao');
 const cadastroProdutoSchema = require('../../validation/cadastroProdutoSchema');
+const editarProdutoSchema = require('../../validation/editarProdutoSchema');
 
 const cadastrarProduto = async (req, res) => {
   const { nome, imagem, descricao, estoque, status, preco } = req.body;
