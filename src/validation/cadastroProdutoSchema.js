@@ -1,5 +1,7 @@
 const yup = require('./yup');
 
+const regexPreco = new RegExp(/(\d{1,3}(\.\d{3})*|\d+)(\,\d{2})$/);
+
 const cadastroProdutoSchema = yup.object().shape({
     nome: yup
       .string()
@@ -17,7 +19,9 @@ const cadastroProdutoSchema = yup.object().shape({
       .boolean()
       .required('Este campo deve ser preenchido'),
     preco: yup
-      .number()
+      .string()
+      .typeError('O preço precisa ter um formato válido.')
+      .matches(regexPreco, 'O preço deve ser enviado no formato correto utilizando a virgula')
       .required('Este campo deve ser preenchido')
   });
   
