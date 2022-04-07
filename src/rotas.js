@@ -1,5 +1,6 @@
 const express = require('express');
-const produtos = require('./controller/produtos');
+const produtosLoja = require('./controller/produtos');
+const produtosAdm = require('./controller/administrative/produtos');
 
 const rotas = express();
 
@@ -7,5 +8,16 @@ const rotas = express();
 rotas.get('/', function (req, res) {
     res.send("Servidor OK!")
 })
+
+//Produtos Administrativos
+rotas.post('/adm/produtos', produtosAdm.cadastrarProduto);
+rotas.get('/adm/produtos', produtosLoja.listarProdutos);
+rotas.patch('/adm/produtos/:id', produtosAdm.editarProduto);
+rotas.delete('/adm/produtos/:id', produtosAdm.excluirProduto);
+
+//Produtos Loja
+rotas.get('/produtos', produtosLoja.listarProdutos);
+rotas.get('/produtos/:id', produtosLoja.abrirProduto);
+
 
 module.exports = rotas;
