@@ -12,6 +12,7 @@ rotas.get('/', function (req, res) {
 //Produtos Administrativos
 rotas.post('/adm/produtos', produtosAdm.cadastrarProduto);
 rotas.get('/adm/produtos', produtosLoja.listarProdutos);
+rotas.get('/adm/produtos/:pesquisa', produtosLoja.buscarProdutos)
 rotas.patch('/adm/produtos/:id', produtosAdm.editarProduto);
 rotas.delete('/adm/produtos/:id', produtosAdm.excluirProduto);
 

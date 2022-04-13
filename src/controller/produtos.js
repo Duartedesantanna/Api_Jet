@@ -11,6 +11,25 @@ const listarProdutos = async (req, res) => {
     }
 };
 
+const buscarProdutos = async (req, res) => {
+    const { pesquisa } = req.params;
+
+    try {
+
+        const busca = `%${pesquisa}%`;
+        
+        let consultaProdutos = await knex('produtos').orWhereRaw('nome ILIKE ?', [busca]).orWhereRaw('descricao ILIKE ?', [busca]);
+        
+        if(consultaProdutos.length <= 0){
+            return res.status(200).json([])
+        }
+        return res.status(200).json(consultaProdutos);
+        
+    } catch (error) {
+        return res.status(400).json({ mensagem: error.message });
+    }
+};
+
 const abrirProduto = async (req, res) => {
     const { id } = req.params;
 
@@ -22,11 +41,11 @@ const abrirProduto = async (req, res) => {
         }
         return res.status(200).json(detalheProoduto);
     } catch (error) {
-
+        return res.status(400).json({ mensagem: error.message });
     }
 };
 
 
 module.exports = {
-    listarProdutos, abrirProduto
+    listarProdutos, buscarProdutos, abrirProduto
 }
