@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Duartedesantanna/Api_Jet#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "knex": "^1.0.5",
