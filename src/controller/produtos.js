@@ -2,7 +2,7 @@ const knex = require('../database/conexao');
 
 const listarProdutos = async (req, res) => {
     try {
-        const listaDeProodutos = await knex('produtos').orderBy('id');
+        const listaDeProodutos = await knex('produtos').where('status', true).orderBy('id');
 
         return res.status(200).json(listaDeProodutos);
 

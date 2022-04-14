@@ -13,3 +13,5 @@
 ## #Rodar o projeto usando o nodemon 
 
 #### npx nodemon src/index.js
+##### Configurar o arquivo .env com as informações da base de dados.
+##### Deixa a aplicação rodando na porta 3000
