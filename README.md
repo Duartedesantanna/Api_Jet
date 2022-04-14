@@ -15,3 +15,7 @@
 #### npx nodemon src/index.js
 ##### Configurar o arquivo .env com as informações da base de dados.
 ##### Deixa a aplicação rodando na porta 3000
+
+## #Documentação
+#### após iniciar o projeto a documentação vai estar em /doc
+##### Exemplo: localhost:3000/doc
